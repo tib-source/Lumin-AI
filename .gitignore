@@ -1,0 +1,9 @@
+
+// node stuff 
+node_modules
+
+
+
+
+// enviroment files 
+.env

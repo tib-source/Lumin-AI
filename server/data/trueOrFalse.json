@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "question": "Mitochondria are the powerhouses of the cell.",
+      "answer": true
+    },
+    {
+      "question": "DNA is composed of four different nucleotide bases: adenine, cytosine, guanine, and thymine.",
+      "answer": true
+    },
+    {
+      "question": "All living organisms are made up of cells.",
+      "answer": true
+    },
+    {
+      "question": "Photosynthesis is the process by which plants convert light energy into chemical energy.",
+      "answer": true
+    },
+    {
+      "question": "Viruses are considered living organisms.",
+      "answer": false
+    },
+    {
+      "question": "The process of cell division in eukaryotic cells is called binary fission.",
+      "answer": false
+    },
+    {
+      "question": "Enzymes are biological catalysts that speed up chemical reactions in cells.",
+      "answer": true
+    },
+    {
+      "question": "Red blood cells have a nucleus.",
+      "answer": false
+    },
+    {
+      "question": "The main function of white blood cells is to carry oxygen.",
+      "answer": false
+    },
+    {
+      "question": "The human brain consists of three main parts: the cerebrum, cerebellum, and brainstem.",
+      "answer": true
+    }
+  ]
+}

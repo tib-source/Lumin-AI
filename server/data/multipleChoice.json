@@ -1,0 +1,54 @@
+{
+	"questions": [
+		{
+			"question": "Which of the following is an example of a renewable source of energy?",
+			"options": ["Coal", "Solar power", "Natural gas", "Nuclear power"],
+			"answer": "Solar power"
+		},
+		{
+			"question": "Which of the following is an example of a conductor of electricity?",
+			"options": ["Rubber", "Glass", "Plastic", "Copper"],
+			"answer": "Copper"
+		},
+		{
+			"question": "Which of the following objects will sink in water?",
+			"options": ["Plastic ball", "Wooden block", "Rubber duck", "Metal spoon"],
+			"answer": "Metal spoon"
+		},
+		{
+			"question": "Which of the following is a form of energy?",
+			"options": ["Temperature", "Color", "Weight", "Sound"],
+			"answer": "Sound"
+		},
+		{
+			"question": "Which of the following is the main source of light on Earth?",
+			"options": ["Moon", "Stars", "Sun", "Fire"],
+			"answer": "Sun"
+		},
+		{
+			"question": "Which of the following is an example of a transparent material?",
+			"options": ["Wood", "Brick", "Metal", "Glass"],
+			"answer": "Glass"
+		},
+		{
+			"question": "Which of the following is the process of changing a solid into a liquid?",
+			"options": ["Melting", "Freezing", "Condensation", "Evaporation"],
+			"answer": "Melting"
+		},
+		{
+			"question": "Which of the following is the force that pulls objects towards the center of the Earth?",
+			"options": ["Gravity", "Friction", "Magnetism", "Electricity"],
+			"answer": "Gravity"
+		},
+		{
+			"question": "Which of the following colors has the longest wavelength?",
+			"options": ["Red", "Blue", "Green", "Yellow"],
+			"answer": "Red"
+		},
+		{
+			"question": "Which of the following is a type of simple machine?",
+			"options": ["Screw", "Battery", "Computer", "Television"],
+			"answer": "Screw"
+		}
+	]
+}

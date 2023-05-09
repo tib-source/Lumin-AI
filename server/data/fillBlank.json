@@ -1,0 +1,44 @@
+{
+	"questions": [
+		{
+			"question": "In computer science, a %s is a set of instructions or rules for solving a specific problem.",
+			"answer": "algorithm"
+		},
+		{
+			"question": "A %s is a data structure that follows the Last-In-First-Out (LIFO) principle.",
+			"answer": "stack"
+		},
+		{
+			"question": "A %s is a data structure that follows the First-In-First-Out (FIFO) principle.",
+			"answer": "queue"
+		},
+		{
+			"question": "%s is a sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.",
+			"answer": "bubble sort"
+		},
+		{
+			"question": "A %s is a data structure that consists of a collection of nodes, where each node has a value and a reference to the next node.",
+			"answer": "linked list"
+		},
+		{
+			"question": "In computer science, a %s is a tree-like data structure that represents a hierarchical structure with a set of linked nodes.",
+			"answer": "tree"
+		},
+		{
+			"question": "%s is a graph traversal algorithm that explores as far as possible along each branch before backtracking.",
+			"answer": "depth-first search"
+		},
+		{
+			"question": "A %s is a data structure that stores a collection of elements in a way that allows for efficient insertion, deletion, and retrieval of elements.",
+			"answer": "hash table"
+		},
+		{
+			"question": "%s is a dynamic programming algorithm for finding the longest common subsequence between two sequences.",
+			"answer": "LCS (Longest Common Subsequence)"
+		},
+		{
+			"question": "A %s is a data structure that organizes elements into a balanced binary search tree, allowing for efficient search, insertion, and deletion operations.",
+			"answer": "red-black tree"
+		}
+	]
+}
