@@ -8,6 +8,8 @@ import RootLayout from "../layout/rootLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Landing from "../pages/landing";
+import HomeLayout from "../layout/HomeLayout";
+import HomePage from "../pages/HomePage";
 
 let router = createBrowserRouter(
 	createRoutesFromElements(
@@ -17,10 +19,13 @@ let router = createBrowserRouter(
 				<Route path="login" element={<Login />} />
 				<Route path="register" element={<Register />} />
 			</Route>
-			<Route path="/quiz"></Route>
-			<Route path="/profile"></Route>
-			<Route path="/collections"></Route>
-			<Route path="/forum"></Route>
+			<Route element={<HomeLayout />}>
+				<Route path="/home" element={<HomePage />} />
+				<Route path="/profile"></Route>
+				<Route path="/quiz"></Route>
+				<Route path="/forum"></Route>
+				<Route path="/collections"></Route>
+			</Route>
 		</Route>
 	)
 );

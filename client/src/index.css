@@ -7,7 +7,7 @@
 :root {
   --primary: salmon;
   --secondary: #242424;
-
+  --white: azure;
 
   font-family: 'Kanit',Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -100,3 +100,63 @@ body {
   text-align: center;
  }
 
+
+
+ .home{ 
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+ }
+
+ 
+.home__navbar{ 
+  width: 20vw;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--secondary);
+}
+ 
+.home__navbar h1{ 
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.home__navbar a{ 
+  background-color: var(--secondary);
+  color: var(--white);
+  width: 7rem;
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  box-shadow: 0.2rem 0.2rem 0rem  var(--white);
+  border: 2px solid var(--white);
+}
+
+.home__main{ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__main__middle{ 
+  width: clamp( 500px,52.5vw, 1600px);
+  min-height: 100vh;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__main__sidebar{ 
+  background-color: var(--white
+  );
+  color: var(--secondary);
+  min-height: 100vh;
+  width: 27.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
