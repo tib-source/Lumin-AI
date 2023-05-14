@@ -6,7 +6,7 @@ function Landing() {
 			<div className="landing-main">
 				<h1>Lumin</h1>
 				<p>Illuminating minds with the knowledge of AI</p>
-				<Link to="/home">Start your Journey</Link>
+				<Link to="/learn">Start your Journey</Link>
 			</div>
 		</div>
 	);

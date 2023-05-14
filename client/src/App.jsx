@@ -20,7 +20,10 @@ let router = createBrowserRouter(
 				<Route path="register" element={<Register />} />
 			</Route>
 			<Route element={<HomeLayout />}>
-				<Route path="/home" element={<HomePage />} />
+				<Route path="/learn">
+					<Route index element={<HomePage />} />
+				</Route>
+
 				<Route path="/profile"></Route>
 				<Route path="/quiz"></Route>
 				<Route path="/forum"></Route>
