@@ -1,4 +1,4 @@
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ContentMain() {
 	const navigate = useNavigate();
@@ -8,7 +8,13 @@ export default function ContentMain() {
 		const qtype = e.target[1].value;
 		const difficulty = e.target[2].value;
 		console.log("meow");
-		navigate(`/quiz?qtype=${qtype}&topic=${topic}&difficulty=${difficulty}`);
+		navigate(`/quiz`, {
+			state: {
+				topic,
+				qtype,
+				difficulty,
+			},
+		});
 	}
 	return (
 		<div className="home__main__middle flex">

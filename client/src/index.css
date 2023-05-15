@@ -125,10 +125,19 @@ a:hover {
   color: var(--white);
   width: 7rem;
   text-align: center;
-  margin: 0.5rem;
-  padding: 0.5rem 0.8rem;
-  box-shadow: 0.1rem 0.1rem 0rem  var(--white);
-  border: 2px solid var(--white);
+  padding: 0.5rem 0.5rem;
+  border-bottom: 2px solid var(--white);
+  transition: opacity 100ms linear;
+}
+
+.home__navbar a:hover{ 
+  opacity: 0.6;
+
+}
+
+.home__navbar a.active:hover{ 
+  opacity: 1;
+
 }
 .home__navbar a.active{ 
   background-color: var(--primary);

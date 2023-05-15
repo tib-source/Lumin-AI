@@ -10,6 +10,7 @@ import Register from "../pages/Register";
 import Landing from "../pages/landing";
 import HomeLayout from "../layout/HomeLayout";
 import HomePage from "../pages/HomePage";
+import Quiz from "../components/Quiz/Quiz";
 
 let router = createBrowserRouter(
 	createRoutesFromElements(
@@ -25,7 +26,8 @@ let router = createBrowserRouter(
 				</Route>
 
 				<Route path="/profile"></Route>
-				<Route path="/quiz"></Route>
+				<Route path="/quiz" element={<Quiz />} />
+
 				<Route path="/forum"></Route>
 				<Route path="/collections"></Route>
 			</Route>

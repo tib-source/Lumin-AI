@@ -7,6 +7,7 @@ const fillBlank = require("../../data/fillBlank.json");
 const handlePostReq = (req, res, type) => {
 	try {
 		const { ammount, topic, level } = req.body;
+		console.log(type);
 		if (!ammount || !topic || !level) {
 			res.status(400).json({
 				msg: "Please provide values for ammount, topic and level ",
@@ -42,12 +43,15 @@ router.get("/", (req, res) => {
 });
 
 router.post("/trueFalse", (req, res) => {
-	const prompt = handlePostReq(req, res, "True or False");
+	const prompt = "meow";
 	if (prompt) {
 		// temporarily send hardcoded data untill i get the open ai api
-		return res.status(200).json({ prompt, trueOrFalse });
+		res.status(200);
+		res.json(JSON.stringify({ prompt, trueOrFalse }));
 	}
-	res.status(500).json({ msg: "server error" });
+
+	console.log(prompt);
+	// res.status(500).send({ msg: "server error" });
 });
 
 router.post("/multipleChoice", (req, res) => {
@@ -56,7 +60,7 @@ router.post("/multipleChoice", (req, res) => {
 		// temporarily send hardcoded data untill i get the open ai api
 		return res.status(200).json({ prompt, multipleChoice });
 	}
-	res.status(500).json({ msg: "server error" });
+	res.status(500).send({ msg: "server error" });
 });
 
 router.post("/fillBlank", (req, res) => {
