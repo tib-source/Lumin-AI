@@ -209,3 +209,36 @@ a:hover {
   padding: 0.5rem;
   margin: 0rem 1rem;
 }
+
+.quiz{
+  text-align: center;
+  margin-top: 3rem;
+ }
+
+.questionCard{
+  text-align: left;
+  padding: 3rem;
+  border-radius: 0.2rem;
+  width: 50%;
+  margin: 1rem auto  ;
+  background: var(--bg)
+}
+
+.questionCard .answers{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.questionCard button{ 
+  background-color: var(--secondary);
+  border: none;
+  padding: 1em 3rem;
+  margin-right: 1rem;
+  transition: 100ms all;
+  text-decoration: inherit;
+
+}
+
+.questionCard button:hover{ 
+  opacity: 0.8;
+}

@@ -47,7 +47,7 @@ router.post("/trueFalse", (req, res) => {
 	if (prompt) {
 		// temporarily send hardcoded data untill i get the open ai api
 		res.status(200);
-		res.json(JSON.stringify({ prompt, trueOrFalse }));
+		res.json(JSON.stringify({ prompt, ...trueOrFalse }));
 	}
 
 	console.log(prompt);
