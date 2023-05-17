@@ -1,7 +1,7 @@
 export default function Question({ question, type, answer, choices, index }) {
 	const handleClick = (e) => {
 		const button = e.target;
-		if (answer.toLowerCase() == button.textContent.toLowerCase()) {
+		if (answer.toString().toLowerCase() == button.textContent.toLowerCase()) {
 			button.style.background = "green";
 		}
 	};
