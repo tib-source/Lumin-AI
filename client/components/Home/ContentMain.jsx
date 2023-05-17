@@ -29,7 +29,7 @@ export default function ContentMain() {
 					<select name="qtype" id="qtype">
 						<option value={"trueFalse"}>True or False</option>
 						<option value={"fillBlank"}>Fill the blank</option>
-						<option value={"multiple"}>Multiple Choice</option>
+						<option value={"multipleChoice"}>Multiple Choice</option>
 						<option value={"shortAns"}>Short Answers</option>
 					</select>
 				</label>

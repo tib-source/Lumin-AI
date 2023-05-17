@@ -47,7 +47,7 @@ router.post("/trueFalse", (req, res) => {
 	if (prompt) {
 		// temporarily send hardcoded data untill i get the open ai api
 		res.status(200);
-		res.json(JSON.stringify({ prompt, ...trueOrFalse }));
+		res.json({ prompt, ...trueOrFalse });
 	}
 
 	console.log(prompt);
@@ -55,10 +55,11 @@ router.post("/trueFalse", (req, res) => {
 });
 
 router.post("/multipleChoice", (req, res) => {
-	const prompt = handlePostReq(req, res, "Multiple Choice");
+	// const prompt = handlePostReq(req, res, "Multiple Choice");
+	const prompt = "meow";
 	if (prompt) {
 		// temporarily send hardcoded data untill i get the open ai api
-		return res.status(200).json({ prompt, multipleChoice });
+		return res.status(200).json({ prompt, ...multipleChoice });
 	}
 	res.status(500).send({ msg: "server error" });
 });

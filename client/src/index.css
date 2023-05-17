@@ -242,3 +242,16 @@ a:hover {
 .questionCard button:hover{ 
   opacity: 0.8;
 }
+
+
+.question .answers{ 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.question .answer button{ 
+  flex: 0.5;
+}

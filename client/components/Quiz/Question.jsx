@@ -1,27 +1,52 @@
-export default function Question({ question, type, answer, index }) {
+export default function Question({ question, type, answer, choices, index }) {
 	const handleClick = (e) => {
 		const button = e.target;
-
-		console.log(answer);
-		console.log(button.textContent);
-		if (answer.toString() == button.textContent.toLowerCase()) {
+		if (answer.toLowerCase() == button.textContent.toLowerCase()) {
 			button.style.background = "green";
 		}
 	};
-	console.log(type);
 	const generate = (type) => {
-		if (type == "trueFalse") {
-			return (
-				<div className="question">
-					<p>
-						{index}. {question}
-					</p>
-					<div className="answers">
-						<button onClick={handleClick}>True</button>
-						<button onClick={handleClick}>False</button>
+		let questionHTML;
+		switch (type) {
+			case "trueFalse":
+				console.log(question);
+				questionHTML = (
+					<div className="question">
+						<p>
+							{index}. {question}
+						</p>
+						<div className="answers">
+							<button onClick={handleClick}>True</button>
+							<button onClick={handleClick}>False</button>
+						</div>
 					</div>
-				</div>
-			);
+				);
+				return questionHTML;
+			case "multipleChoice":
+				question = (
+					<div className="question">
+						<p>
+							{index}. {question}
+						</p>
+						<div className="answers">
+							{choices.map((ans, i) => {
+								return (
+									<button onClick={handleClick} key={i}>
+										{ans}
+									</button>
+								);
+							})}
+						</div>
+					</div>
+				);
+				return question;
+			case "fillBlank":
+				break;
+			default:
+				question = "Error Generating the Questions";
+		}
+		if (type == "trueFalse") {
+			return;
 		}
 	};
 	return <div className="questionCard">{generate(type)}</div>;

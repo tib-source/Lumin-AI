@@ -21,29 +21,39 @@ export default function Quiz() {
 		redirect: "follow",
 	};
 
+	const questionTypes = {
+		trueFalse: "True or False",
+		multipleChoice: "Multiple Choice",
+		fillBlank: "Fill the Blank",
+	};
+	console.log(qtype);
 	useEffect(() => {
-		fetch("http://localhost:5000/api/questions/trueFalse", requestOptions)
+		fetch(`http://localhost:5000/api/questions/${qtype}`, requestOptions)
 			.then((response) => response.json())
-			.then((result) => setQuestions(JSON.parse(result).questions))
+			.then((result) => {
+				console.log(result);
+				return setQuestions(result.questions);
+			})
 			.catch((error) => console.log("error", error));
 	}, [state]);
 	console.log(questions);
 	return (
 		<div className="quiz">
 			<div className="quiz__header">
-				<h1>True and False</h1>
-				<p>Topic: {"Biology"}</p>
+				<h1>{questionTypes[qtype]}</h1>
+				<p>Topic: {topic}</p>
 				<p>Level: {difficulty || "undefined"}</p>
 			</div>
 			{!questions ? (
 				<div className="loading">Loading</div>
 			) : (
-				questions.map(({ question, answer }, index) => {
+				questions.map(({ question, answer, choices }, index) => {
 					return (
 						<Question
 							key={index}
 							question={question}
 							answer={answer}
+							choices={choices || "undefined"}
 							type={qtype}
 							index={index + 1}
 						/>
