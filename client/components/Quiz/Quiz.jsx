@@ -7,27 +7,28 @@ export default function Quiz() {
 	let { state } = useLocation();
 	const { topic, difficulty, qtype } = state;
 	const [questions, setQuestions] = useState([]);
-	let myHeaders = new Headers();
-	myHeaders.append("Content-Type", "application/json");
-	var raw = JSON.stringify({
-		ammount: "10",
-		topic,
-		level: difficulty,
-	});
-	var requestOptions = {
-		method: "POST",
-		headers: myHeaders,
-		body: raw,
-		redirect: "follow",
-	};
-
 	const questionTypes = {
 		trueFalse: "True or False",
 		multipleChoice: "Multiple Choice",
 		fillBlank: "Fill the Blank",
 	};
-	console.log(qtype);
+
+	const raw = JSON.stringify({
+		ammount: "10",
+		topic,
+		level: difficulty,
+	});
+
 	useEffect(() => {
+		let myHeaders = new Headers();
+		myHeaders.append("Content-Type", "application/json");
+
+		var requestOptions = {
+			method: "POST",
+			headers: myHeaders,
+			body: raw,
+			redirect: "follow",
+		};
 		fetch(`http://localhost:5000/api/questions/${qtype}`, requestOptions)
 			.then((response) => response.json())
 			.then((result) => {
@@ -35,7 +36,7 @@ export default function Quiz() {
 				return setQuestions(result.questions);
 			})
 			.catch((error) => console.log("error", error));
-	}, [state]);
+	}, [state, qtype, raw]);
 	console.log(questions);
 	return (
 		<div className="quiz">

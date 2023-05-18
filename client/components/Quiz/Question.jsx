@@ -1,4 +1,5 @@
-export default function Question({ question, type, answer, choices, index }) {
+import PropTypes from "prop-types";
+function Question({ question, type, answer, choices, index }) {
 	const handleClick = (e) => {
 		const button = e.target;
 		if (answer.toString().toLowerCase() == button.textContent.toLowerCase()) {
@@ -51,3 +52,14 @@ export default function Question({ question, type, answer, choices, index }) {
 	};
 	return <div className="questionCard">{generate(type)}</div>;
 }
+
+Question.propTypes = {
+	name: PropTypes.string.isRequired,
+	index: PropTypes.number.isRequired,
+	choices: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+	answer: PropTypes.string.isRequired,
+	question: PropTypes.string.isRequired,
+	type: PropTypes.string.isRequired,
+};
+
+export default Question;
