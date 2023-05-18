@@ -5,8 +5,9 @@ import Question from "./Question";
 
 export default function Quiz() {
 	let { state } = useLocation();
-	const { topic, difficulty, qtype } = state;
+	const [correctAns, setCorrectAns] = useState(0);
 	const [questions, setQuestions] = useState([]);
+	const { topic, difficulty, qtype } = state;
 	const questionTypes = {
 		trueFalse: "True or False",
 		multipleChoice: "Multiple Choice",
@@ -37,11 +38,15 @@ export default function Quiz() {
 			})
 			.catch((error) => console.log("error", error));
 	}, [state, qtype, raw]);
-	console.log(questions);
+
+	const handleCorrectAns = () => {
+		setCorrectAns(correctAns + 1);
+	};
 	return (
 		<div className="quiz">
 			<div className="quiz__header">
 				<h1>{questionTypes[qtype]}</h1>
+				<h3>{correctAns} / 10</h3>
 				<p>Topic: {topic}</p>
 				<p>Level: {difficulty || "undefined"}</p>
 			</div>
@@ -57,6 +62,7 @@ export default function Quiz() {
 							choices={choices || "undefined"}
 							type={qtype}
 							index={index + 1}
+							handleCorrect={handleCorrectAns}
 						/>
 					);
 				})
