@@ -255,3 +255,10 @@ a:hover {
 .question .answer button{ 
   flex: 0.5;
 }
+
+.question input
+  { 
+    font-family: "Poppins" ,'Kanit',Inter ;
+    padding: 0.5rem;
+  
+}

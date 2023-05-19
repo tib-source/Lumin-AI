@@ -65,10 +65,11 @@ router.post("/multipleChoice", (req, res) => {
 });
 
 router.post("/fillBlank", (req, res) => {
-	const prompt = handlePostReq(req, res, "Fill in the Blank");
+	// const prompt = handlePostReq(req, res, "Fill in the Blank");
+	const prompt = "Fill in the Blank";
 	if (prompt) {
 		// temporarily send hardcoded data untill i get the open ai api
-		return res.status(200).json({ prompt, fillBlank });
+		return res.status(200).json({ prompt, ...fillBlank });
 	}
 	res.status(500).json({ msg: "server error" });
 });

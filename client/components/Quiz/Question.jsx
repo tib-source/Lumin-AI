@@ -36,9 +36,9 @@ function Question({ question, type, answer, choices, index, handleCorrect }) {
 						</div>
 					</div>
 				);
-				return questionHTML;
+				break;
 			case "multipleChoice":
-				question = (
+				questionHTML = (
 					<div className="question">
 						<p>
 							{index}. {question}
@@ -54,15 +54,31 @@ function Question({ question, type, answer, choices, index, handleCorrect }) {
 						</div>
 					</div>
 				);
-				return question;
+				break;
 			case "fillBlank":
+				let tempQuestion = question.split("%s");
+
+				questionHTML = (
+					<div className="question">
+						<p>
+							{index}. {tempQuestion[0]}
+							<input
+								disabled={isDisabled}
+								type="text"
+								name="answer"
+								id="qAns"
+							/>
+							{tempQuestion[1]}
+						</p>
+					</div>
+				);
 				break;
 			default:
-				question = "Error Generating the Questions";
+				questionHTML = "Error Generating the Questions";
+				break;
 		}
-		if (type == "trueFalse") {
-			return;
-		}
+
+		return questionHTML;
 	};
 	return <div className="questionCard">{generate(type)}</div>;
 }
