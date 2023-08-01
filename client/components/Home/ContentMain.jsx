@@ -21,11 +21,11 @@ export default function ContentMain() {
 			<h1>Luminator</h1>
 			<form className="home__main__form" onSubmit={handleSubmit}>
 				<label htmlFor="topic">
-					Topic to Explore:
+					<span>Topic to Explore:</span>
 					<input id="topic" name="topic" type="text" required />
 				</label>
 				<label htmlFor="qtype">
-					Type of Question:
+					<span>Type of Question:</span>
 					<select name="qtype" id="qtype">
 						<option value={"trueFalse"}>True or False</option>
 						<option value={"fillBlank"}>Fill the blank</option>
@@ -35,7 +35,7 @@ export default function ContentMain() {
 				</label>
 
 				<label htmlFor="qtype">
-					Question Dificulty:
+					<span>Question Dificulty:</span>
 					<select name="qtype" id="qtype">
 						<option value={"Primary School"}>Primary School</option>
 						<option value={"Secondary School"}>Secondary School</option>
