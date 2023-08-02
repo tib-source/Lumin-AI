@@ -13,6 +13,7 @@ app.use(express.json());
 
 // api routes
 app.use("/api/questions", require("./Routes/api/questions"));
+app.use("/api/forum", require("./Routes/api/forum"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT || 5000, () => {

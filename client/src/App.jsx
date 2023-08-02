@@ -28,7 +28,10 @@ let router = createBrowserRouter(
 				<Route path="/profile"></Route>
 				<Route path="/quiz" element={<Quiz />} />
 
-				<Route path="/forum"></Route>
+				<Route path="/forum">
+					<Route index />
+					<Route path="/:id" />
+				</Route>
 				<Route path="/collections"></Route>
 			</Route>
 		</Route>
