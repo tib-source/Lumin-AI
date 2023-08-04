@@ -30,7 +30,7 @@ let router = createBrowserRouter(
 
 				<Route path="/forum">
 					<Route index />
-					<Route path="/:id" />
+					{/* <Route path="/:id" /> */}
 				</Route>
 				<Route path="/collections"></Route>
 			</Route>

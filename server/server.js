@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
 const { Configuration, OpenAIApi } = require("openai");
 const fs = require("fs");
@@ -6,9 +7,16 @@ require("dotenv").config();
 
 const app = express();
 
+// connecting to the mongodb database using mongoose
+mongoose
+	.connect(process.env.MONGO_URI, {})
+	.then((res) => console.log(`Connection Succesful ${res}`))
+	.catch((err) => console.log(`Error in DB connection ${err}`));
+
 // response body parser
 app.use(cors());
 app.use(express.json());
+
 // app.use(express.urlencoded({ limit: true }));
 
 // api routes
