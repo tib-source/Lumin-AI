@@ -3,7 +3,8 @@ const ForumServices = require("../services/ForumServices");
 class Forum {
 	static async getAllForums(req, res, next) {
 		try {
-			const allArticles = ForumServices.getAllForums();
+			const allArticles = await ForumServices.getAllForums();
+			console.log("meow");
 			if (!allArticles) {
 				res.status(404).json("No Forums Found.");
 			}
