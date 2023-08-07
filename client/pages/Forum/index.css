@@ -2,11 +2,11 @@
 
 .forum__container{
     background-color: var(--bg);
-    box-shadow: 0rem 0rem 10px -0px var(--bg);
+    /* box-shadow: 0rem 0rem 10px -0px var(--bg); */
     display: flex;
     position: relative;
     margin: 0 4rem;
-    padding:2rem 1rem;
+    padding:1rem 0rem;
     border-radius: 1rem;
 }
 

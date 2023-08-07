@@ -31,7 +31,8 @@
   --teritary_second: #6bc5fd98;
   --white: #ffffff;
   --sidebarWidth: 35vw;
-  font-family: 'Montserrat', sans-serif;
+  --main-font: 'Montserrat', sans-serif;
+  font-family: var(--main-font);
     font-size: 1rem;
   color-scheme: light dark;
   background-color: var(--secondary);
@@ -240,7 +241,7 @@ a:hover {
 .home__main__form option,
 .home__main__form button{ 
   width: 200px;
-  font-family: "Poppins" ,'Kanit',Inter ;
+  font-family: var(--main-font);
   padding: 0.5rem;
   margin-left: 1rem;
 
@@ -294,7 +295,7 @@ a:hover {
 
 .question input
   { 
-    font-family: "Poppins" ,'Kanit',Inter ;
+    font-family: var(--main-font);
     padding: 0.5rem;
   
 }
