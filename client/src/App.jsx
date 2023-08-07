@@ -11,6 +11,7 @@ import Landing from "../pages/landing";
 import HomeLayout from "../layout/HomeLayout";
 import HomePage from "../pages/HomePage";
 import Quiz from "../components/Quiz/Quiz";
+import ForumPage from "../pages/Forum/ForumPage";
 
 let router = createBrowserRouter(
 	createRoutesFromElements(
@@ -29,7 +30,7 @@ let router = createBrowserRouter(
 				<Route path="/quiz" element={<Quiz />} />
 
 				<Route path="/forum">
-					<Route index />
+					<Route index element={<ForumPage />} />
 					{/* <Route path="/:id" /> */}
 				</Route>
 				<Route path="/collections"></Route>

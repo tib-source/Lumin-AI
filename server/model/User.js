@@ -26,6 +26,10 @@ UserSchema = Schema(
 			bio: String,
 			image: String,
 			expPoints: Number,
+			questionCollection: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Questions",
+			},
 		},
 	},
 	{ timestamps: true }
