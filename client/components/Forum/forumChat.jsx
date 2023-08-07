@@ -26,9 +26,7 @@ export default function ForumChat() {
 				/>{" "}
 				<ChatSingle />
 			</div>
-			<div className="chat__input">
-				<TextInput />
-			</div>
+			<TextInput />
 		</div>
 	);
 }
