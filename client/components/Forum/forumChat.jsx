@@ -3,25 +3,36 @@ import ChatSingle from "./chatSingle";
 import TextInput from "./TextInput";
 
 export default function ForumChat() {
-	const [data, setData] = useState([
+	const prevData = [
 		"Lorem ipsum dolor, sit amet cosectetur adipisicing elit. Rem, consequatur, Lorem ipsum dolor, sit amet cosectetur adipisicing elit. Rem, consequatur adsfasdf asdfas df asdfasdf ",
 		"Lorem ipsum consequatur",
 		"Lorem ipsum dolor, sit amet  adipisicing elit. Rem, consequatur",
 		"Whats up Fellas",
-		"Lorem ipsum dolor sit.",
-	]);
+	];
+	const [data, setData] = useState([]);
+
+	function addData(newData) {
+		setData([...data, newData]);
+		// TODO: fix scrolling issue
+		document.getElementById("chat__content").scrollTop =
+			document.getElementById("chat__content").scrollTop.scrollHeight;
+	}
 	return (
 		<div className="forum__chat">
 			<div className="chat__header">
 				<p>Computer Science</p>
 			</div>
-			<div className="chat__content">
+			<div className="chat__content" id="chat__content">
 				<ChatSingle textContent={"This is a test, test 123"} />
-				{data.map((text, i) => {
+				{prevData.map((text, i) => {
 					return <ChatSingle key={i} textContent={text} left={true} />;
 				})}
+
+				{data.map((text, i) => {
+					return <ChatSingle key={i} textContent={text} />;
+				})}
 			</div>
-			<TextInput />
+			<TextInput setData={addData} />
 		</div>
 	);
 }
