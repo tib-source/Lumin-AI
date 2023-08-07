@@ -107,7 +107,7 @@
  .chatSingle__content{
     background-color: var(--bg);
     padding: 1.3rem;
-    border-radius: .2rem;
+    border-radius: .35rem;
     max-width: 80%;
  }
 
@@ -121,13 +121,13 @@
  .chat__input input{ 
     padding: 0.5rem 1rem;
     font-family: var(--main-font);
-    border-radius: 2rem;
+    border-radius: 0.35rem;
     width: 100%;
     flex: 6;
  }
 
  .chat__input button{ 
     flex: 0.75;
-    border-radius: 2rem;
+    border-radius: .35rem;
     background-color: var(--teritary);
  }
