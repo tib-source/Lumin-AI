@@ -14,7 +14,7 @@ export default function ChatSingle({ left, textContent }) {
 			<div
 				className="chatSingle__content"
 				style={{
-					backgroundColor: left ? "var(--teritary)" : "var(--teritary_second)",
+					backgroundColor: left ? "var(--teritary_second)" : "var(--teritary)",
 				}}
 			>
 				<span> {textContent || "What is good fellas"}</span>
