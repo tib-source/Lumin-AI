@@ -9,7 +9,7 @@ export default function ChatSingle({ left, textContent }) {
 			}}
 		>
 			<div className="chatSingle__icon">
-				<img src="https://placehold.co/55x55" alt="profile picture" />
+				<img src="https://placehold.co/45x45" alt="profile picture" />
 			</div>
 			<div
 				className="chatSingle__content"

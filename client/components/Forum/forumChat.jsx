@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ChatSingle from "./chatSingle";
 import TextInput from "./TextInput";
 
@@ -9,20 +9,23 @@ export default function ForumChat() {
 		"Lorem ipsum dolor, sit amet  adipisicing elit. Rem, consequatur",
 		"Whats up Fellas",
 	];
+
 	const [data, setData] = useState([]);
+	const scrollRef = useRef(null);
+	useEffect(() => {
+		scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+	}, [data]);
 
 	function addData(newData) {
 		setData([...data, newData]);
-		// TODO: fix scrolling issue
-		document.getElementById("chat__content").scrollTop =
-			document.getElementById("chat__content").scrollTop.scrollHeight;
+		// TODO: fix scrolling issue.
 	}
 	return (
 		<div className="forum__chat">
 			<div className="chat__header">
 				<p>Computer Science</p>
 			</div>
-			<div className="chat__content" id="chat__content">
+			<div className="chat__content" id="chat__content" ref={scrollRef}>
 				<ChatSingle textContent={"This is a test, test 123"} />
 				{prevData.map((text, i) => {
 					return <ChatSingle key={i} textContent={text} left={true} />;
