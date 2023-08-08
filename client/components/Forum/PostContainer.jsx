@@ -2,7 +2,7 @@ export default function PostContainer() {
 	return (
 		<div className="sidebar__postContainer">
 			<div className="postContainer__icon">
-				<img src="https://placehold.co/75x75" alt="" />
+				<img src="https://placehold.co/55x55" alt="" />
 			</div>
 			<div className="postContainer__content">
 				<span className="postContainer__date">yesterday</span>

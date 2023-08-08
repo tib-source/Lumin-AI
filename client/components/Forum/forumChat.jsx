@@ -23,7 +23,7 @@ export default function ForumChat() {
 	return (
 		<div className="forum__chat">
 			<div className="chat__header">
-				<p>Computer Science</p>
+				<p>Lorem ipsum dolor sit amet consectetur...</p>
 			</div>
 			<div className="chat__content" id="chat__content" ref={scrollRef}>
 				<ChatSingle textContent={"This is a test, test 123"} />

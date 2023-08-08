@@ -32,6 +32,7 @@
   --white: #ffffff;
   --sidebarWidth: 35vw;
   --main-font: 'Montserrat', sans-serif;
+  --navbar-height: 12.5vh;
   font-family: var(--main-font);
     font-size: 1rem;
   color-scheme: light dark;
@@ -126,7 +127,8 @@ a:hover {
 
  
 .home__navbar{ 
-  padding: 1rem 5rem;
+  height: var(--navbar-height);
+  padding: 0 4rem;
   display: flex;  
   align-items: center;
   background-color: var(--secondary);
