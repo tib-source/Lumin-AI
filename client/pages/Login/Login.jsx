@@ -4,11 +4,23 @@ function Login() {
     <form className="Login">
       <label htmlFor="username">
         Username:
-        <input type="text" name="username" id="username" />
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required
+        />
       </label>
       <label htmlFor="password">
         Password:
-        <input type="password" name="password" id="password" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
       </label>
 
       <a href="#">Forgot Password</a>
