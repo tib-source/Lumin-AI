@@ -33,10 +33,10 @@
   --sidebarWidth: 35vw;
   --main-font: 'Montserrat', sans-serif;
   --navbar-height: 12.5vh;
+  color: var(--white);
   font-family: var(--main-font);
     font-size: 1rem;
-  color-scheme: light dark;
-  background-color: var(--secondary);
+      background-color: var(--secondary);
 }
 
 a {
