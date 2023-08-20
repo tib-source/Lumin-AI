@@ -19,7 +19,12 @@ UserSchema = Schema(
 			match: [/\S+@\S+\.\S+/, "is invalid"],
 			index: true,
 		},
-		password: String,
+		password: {
+			type: String,
+			required: [true, "can't be blank"],
+			match: [/^[a-zA-Z0-9]+$/, "is invalid"],
+			index: true,
+		},
 		profile: {
 			firstname: String,
 			lastname: String,

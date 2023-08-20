@@ -4,9 +4,7 @@ const cors = require("cors");
 const { Configuration, OpenAIApi } = require("openai");
 const fs = require("fs");
 require("dotenv").config();
-
 const app = express();
-
 // connecting to the mongodb database using mongoose
 mongoose
 	.connect(process.env.MONGO_URI, {})
