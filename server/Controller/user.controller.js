@@ -1,5 +1,8 @@
 const { generateToken } = require("../helper/auth");
 const UserServices = require("../services/UserServices");
+const bcrypt = require("bcryptjs")
+
+const salt = 10
 
 module.exports = class UserController {
 	static async getUserData(req, res) {
@@ -18,6 +21,7 @@ module.exports = class UserController {
 	}
 
 	static async userData(username = "underworld") {
+
 		try {
 			const user = await UserServices.getUserData(username)
 			if (!user) {
@@ -30,27 +34,58 @@ module.exports = class UserController {
 		}
 	}
 	static async login(req, res) {
+		const { username, password } = req.body;
+
 		try {
-			const { username, password } = req.body;
 			const user = await UserServices.getUserData(username)
 			const userData = {
-				email: user.email,
 				username: user.username,
 				id: user._id
 			}
-			if (password == user.password) {
-				const token = generateToken(JSON.stringify(userData))
-				res.status(200).json({
-					message: "Authorised",
-					user: userData,
-					token
-				})
-			} else {
 
-				res.status(403).json({ access: "denied" })
-			}
+			user.comparePassword(password, function (error, isMatch) {
+				if (isMatch) {
+					const token = generateToken(JSON.stringify(userData))
+					return res.status(200).json({
+						message: "Authorised",
+						user: userData,
+						token
+					})
+				}
+				return res.status(403).JSON({
+					error,
+					access: "denied"
+				})
+
+			})
+
 
 		} catch (error) {
+			console.log(error)
+		}
+	}
+
+
+	static async register(req, res) {
+		console.log(req.body, "request")
+		const { username, password } = req.body
+		try {
+			const newUser = await UserServices.createUser({ username, password })
+			if (newUser) {
+				console.log(newUser)
+				return res.status(201).json({
+					message: "success",
+				})
+			} else {
+				return res.status(400).json({
+					error: "Failed to create the user"
+				})
+			}
+		} catch (error) {
+			console.log(JSON.stringify(error));
+			console.log("");
+			console.log("meow\n");
+			console.log("");
 			console.log(error)
 		}
 	}

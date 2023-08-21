@@ -5,5 +5,6 @@ const { authJWT } = require("../../helper/auth");
 
 router.get("/", userCtlr.getUserData);
 router.post("/auth", userCtlr.login);
+router.post("/register", userCtlr.register);
 
 module.exports = router;

@@ -27,11 +27,36 @@ export const login = createAsyncThunk(
             return response
         } catch (error) {
             console.log(error)
-            if (error.response && error.response.data.message) {
-                return thunkAPI.rejectWithValue(error.response.data.message)
-            } else {
-                return thunkAPI.rejectWithValue(error.message)
-            }
+            thunkAPI.rejectWithValue(error)
+
         }
+    }
+)
+
+
+export const register = createAsyncThunk(
+    "auth/register",
+    async (userData, thunkAPI) => {
+        try {
+            console.log(JSON.stringify(userData))
+            const response = await fetch(`${backendURL}/api/user/register`, {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                method: "POST",
+                body: JSON.stringify(userData)
+            }).then(
+                (result) => result.json()
+            ).then(
+                (data) => data
+            )
+
+            return response
+        } catch (error) {
+            console.log(error)
+            thunkAPI.rejectWithValue(error)
+
+        }
+
     }
 )

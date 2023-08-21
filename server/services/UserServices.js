@@ -13,4 +13,18 @@ module.exports = class UserServices {
 		}
 	}
 
+	static async createUser({ username, password }) {
+		try {
+			const newUser = await User.create({
+				username,
+				password
+			})
+
+			return newUser
+		} catch (e) {
+			console.log(`Unable to create new user: ${e}`)
+			return null
+		}
+	}
+
 };
