@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { register } from "../../src/redux/auth/authActions";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 function Register() {
   const { success } = useSelector((state) => state.auth);
@@ -21,6 +22,7 @@ function Register() {
   // const [emailError, setEmailError] = useState("");
   const [passerror, setPassError] = useState("");
   const [usererror, setUserError] = useState("");
+
   const handleChange = (e, callback) => {
     callback(e.target.value);
   };

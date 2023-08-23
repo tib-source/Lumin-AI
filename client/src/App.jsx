@@ -12,6 +12,7 @@ import HomeLayout from "../layout/HomeLayout";
 import HomePage from "../pages/HomePage";
 import Quiz from "../components/Quiz/Quiz";
 import ForumPage from "../pages/Forum/ForumPage";
+import Games from "../components/Games/Games";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ let router = createBrowserRouter(
         <Route path="/learn">
           <Route index element={<HomePage />} />
         </Route>
+        <Route path="/games" element={<Games />}></Route>
 
         <Route path="/profile"></Route>
         <Route path="/quiz" element={<Quiz />} />

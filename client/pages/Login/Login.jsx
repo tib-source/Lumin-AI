@@ -3,11 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import "./Login.css";
 import { login } from "../../src/redux/auth/authActions";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [notified, setNotified] = useState(false);
+  const { loading, user, error, success } = useSelector((state) => state.auth);
+  // let users know that
 
-  const { loading, user, error } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

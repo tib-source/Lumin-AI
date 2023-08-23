@@ -137,25 +137,28 @@ a:hover {
 }
  
 .home__navbar h1{ 
-  margin-right: auto  ;
   background-color: none;
 
 }
 
 .home__navbar a.navbar__header{ 
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--primary);
   font-weight: 700
   ;
   
 }
+
+.navbar__links{
+  margin-left: auto;
+  
+}
 .home__navbar a.nav{ 
   background-color: var(--secondary);
-  color: var(--white);
-  width: 7rem;
-  text-align: center;
-  padding: 0.5rem 0.5rem;
-  border-bottom: 2px solid var(--white);
+  width: 4rem;
+
+  margin-right:1.5rem;
+  padding: 0.5rem 1rem;
   transition: opacity 100ms linear;
 }
 
@@ -169,7 +172,8 @@ a:hover {
 
 }
 .home__navbar a.active{ 
-  background-color: var(--bg);
+  background-color: var(--primary);
+  color: var(--bg);
 }
 .home__main{ 
   display: flex;

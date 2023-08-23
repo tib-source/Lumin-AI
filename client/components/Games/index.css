@@ -1,0 +1,49 @@
+.games__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.games__container h1{ 
+    border-bottom: 1px solid white;
+    width: fit-content;
+    padding: 2rem;
+}
+
+.games__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    gap:3rem;
+
+}
+
+.games__list img{
+    width: 200px;
+    aspect-ratio: 1.69; 
+    object-fit: cover;
+    border-radius: 1rem;
+    opacity: 0.5;
+    
+}
+
+.game{ 
+    border: 1px solid var(--primary);
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 5rem -3rem var(--white) ;
+    position: relative;
+}
+
+.game p{ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: 800;
+    color: var(--white);
+    text-shadow: 0 0 1rem var(--primary);
+}

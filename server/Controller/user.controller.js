@@ -52,7 +52,7 @@ module.exports = class UserController {
 						token
 					})
 				}
-				return res.status(403).JSON({
+				return res.status(403).json({
 					error,
 					access: "denied"
 				})
