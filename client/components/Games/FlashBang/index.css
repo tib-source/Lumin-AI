@@ -1,4 +1,6 @@
 .flashbang__container{ 
+    width: 100%;
+    height: calc( 100svh - (var(--navbar-height)*2));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,25 +10,25 @@
 
 
 .flashbang__main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top: 2rem;
 }
 
 .flashText{
-    display: flex;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
 }
 
 .flash-card{ 
     background: transparent;
-    width: 150px;
+    width: 200px;
     aspect-ratio: 1.5;
     position: relative;
     perspective: 1000px;
-    margin-bottom: 1rem;
     transition: transform 0.2s;
+    margin-bottom: 1rem;
     transition: opacity 0.2s ease-out; 
 }
 .flash-card-inner{ 
@@ -69,12 +71,12 @@
     transform: rotateY(180deg);
 }
 .clues{ 
-    margin-left: 1rem;
 
 }
 
 .clue{ 
-    padding: .5rem;
+    margin: auto;
+    padding: 0.75rem;
     background-color: var(--bg);
     margin-bottom: 0.5rem;
     width: 450px;

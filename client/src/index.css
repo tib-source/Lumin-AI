@@ -186,7 +186,7 @@ a:hover {
 
 .home__main__middle{ 
   width: 100%;
-  padding: 6.2rem;
+  height: calc( 100svh - (var(--navbar-height)*2));
   color: var(
   --primary
   );
