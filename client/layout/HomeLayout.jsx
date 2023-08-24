@@ -16,6 +16,10 @@ export default function HomeLayout() {
         linkTo: "/forum",
       },
       {
+        name: "Games",
+        linkTo: "/games ",
+      },
+      {
         name: "Profile",
         linkTo: "/profile",
       },
