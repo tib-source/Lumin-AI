@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "flashText": "Keg Coupler",
+        "flashClue": "Device used to tap into kegs for dispensing beer."
+    },
+    {
+        "id": 2,
+        "flashText": "Nitrogen",
+        "flashClue": "Gas often used in beer draft systems to create a creamy mouthfeel."
+    },
+    {
+        "id": 3,
+        "flashText": "Draught Beer",
+        "flashClue": "Beer served from a keg rather than a bottle, often at bars or pubs."
+    },
+    {
+        "id": 4,
+        "flashText": "Tapping System",
+        "flashClue": "Setup that controls the flow of beer from keg to glass, including faucets, lines, and regulators."
+    },
+    {
+        "id": 5,
+        "flashText": "Pouring Angle",
+        "flashClue": "The angle at which a glass is held while pouring beer to manage foam and aroma."
+    },
+    {
+        "id": 6,
+        "flashText": "Drip Tray",
+        "flashClue": "A tray under the draft system faucets to catch any spills or drips."
+    },
+    {
+        "id": 7,
+        "flashText": "Cold Room",
+        "flashClue": "A refrigerated storage area for kegs, helping to maintain the beer's freshness."
+    },
+    {
+        "id": 8,
+        "flashText": "Fobbing",
+        "flashClue": "Excessive foaming due to incorrect temperature, pressure, or line cleaning issues."
+    },
+    {
+        "id": 9,
+        "flashText": "Top Pressure",
+        "flashClue": "The pressure applied to the headspace of a keg to push beer through the lines."
+    }
+]

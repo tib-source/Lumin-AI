@@ -12,26 +12,43 @@
 .flashbang__main{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    place-items: center;
     margin-top: 2rem;
 }
 
+
 .flashText{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
-}
+    gap: 1px;
+    grid-template-columns: repeat(3, min(30svw, 250px)); /* Set column width */
+    grid-auto-rows: min(25svw, 200px); }
 
 .flash-card{ 
     background: transparent;
-    width: 200px;
-    aspect-ratio: 1.5;
     position: relative;
     perspective: 1000px;
     transition: transform 0.2s;
-    margin-bottom: 1rem;
     transition: opacity 0.2s ease-out; 
 }
+
+/* media (max-width: 1200px) {
+    .flashbang__main{
+        grid-template-columns: 1fr 1fr;
+    }
+.flashText{
+
+}
+    .flash-card{
+        width: min(30svw, 145px);
+        margin-bottom: 2svw;
+    }
+    .flashbang__container{ 
+        margin-top: 5rem;
+    }
+}@ */
+
 .flash-card-inner{ 
+    
     position: relative;
     width: 100%;
     height: 100%;
@@ -42,8 +59,13 @@
 
 }
 
-.flash-card-active{
-    transform: rotateY(180deg);
+@keyframes error{ 
+    from { 
+        transform: translate(-1%, 0)
+    }
+    to{
+        transform: translate(1%, 0)
+    }
 }
 .flash-card:hover{ 
     transform: scale(1.02);
@@ -70,14 +92,61 @@
     color: var(--bg);
     transform: rotateY(180deg);
 }
-.clues{ 
 
+.flash-card-active{
+    transform: rotateY(180deg);
+}
+.flash-card-success{ 
+    background-color: var(--success);
+    transform: rotateY(180deg);
+}
+.flash-card-error{
+    animation-name: error;
+    animation-duration: 4s;
+}
+.clues{ 
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 1rem;
 }
 
 .clue{ 
-    margin: auto;
-    padding: 0.75rem;
-    background-color: var(--bg);
-    margin-bottom: 0.5rem;
-    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem ;
+    color: var(--white);
+    border: 0.1rem solid var(--primary);
+    box-shadow: inset 0 0 2rem -1rem black;
+    color: black;
+    background-color: var(--white);
+    transition: opacity 0.4s ease-out;
+    transition: border 0s;
+    cursor: pointer;
+}
+
+
+.clue:hover{ 
+    opacity: 0.9;
+
+
+
+}
+
+.clue-active{ 
+    background-color: var(--primary);
+    border-color: var(--white);
+}
+
+.clue-success{
+    background-color:var(--success);
+    border: 0.1rem solid var(--success);
+    box-shadow: none;
+}
+
+.clue-error{ 
+    background-color: var(--error);
+    border-color: var(--white);
 }
