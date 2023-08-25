@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 
@@ -149,4 +148,42 @@
 .clue-error{ 
     background-color: var(--error);
     border-color: var(--white);
+}
+
+
+.flash-over-background{ 
+    position: absolute;
+    width: 100%;
+    height: calc(100% - var(--navbar-height));
+    bottom: 0;
+}
+
+
+.flash-over-container{ 
+    width: 100%;
+    height: calc(100% - var(--navbar-height));
+
+}
+
+
+.flash-over-modal{ 
+    padding: 5rem;
+    background-color: var(--primary);
+    flex-direction: column;
+    gap: 2.5rem;
+    box-shadow: 0 0 40rem var(--secondary);
+    border-radius: .51rem;
+}
+
+.flash-over-modal a{ 
+    padding: 1rem;
+    background-color: var(--bg);
+    margin-left: 1rem;
+}
+
+
+.flash-over-modal h1{ 
+    font-size: 5rem;
+    color: var(--bg);
+    text-shadow: 0.2rem 0.2rem 0rem var(--error);
 }
