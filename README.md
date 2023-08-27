@@ -1,4 +1,4 @@
-# Lumin: A Student's Exploration of Web Technologies for Learning
+# Lumin
 
 ![Lumin Logo]({image: Lumin Logo})
 
