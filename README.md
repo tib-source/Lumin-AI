@@ -24,13 +24,15 @@ Lumin serves as an experimental platform where I am actively engaging with web d
 
 For those interested in exploring Lumin:
 
-1. **Repository Clone**: To get started, clone the repository using the command `git clone https://github.com/yourusername/lumin.git`.
+1. **Repository Clone**: To get started, clone the repository using the command `git clone https://github.com/tib-source/lumin.git`.
 
-2. **Dependencies Installation**: Run `npm install` to install the necessary dependencies and libraries.
+2. **Dependencies Installation**: Run `npm install` in both the client and server file to install the necessary dependencies and libraries.
 
-3. **API Integration**: Obtain your OpenAI API key and insert it in the `.env` file as follows: `OPENAI_API_KEY=your_api_key`.
+3. **API Integration**: Obtain your OpenAI API key and insert it in the `./server/.env` file as follows: `OPENAI_API_KEY=your_api_key`.
 
-4. **Server Launch**: Launch the development server using `npm start`.
+4. **Server Launch**: Launch the development server using `cd server npm start`.
+
+5. **Client Launch**: Launch the front end server by opening another terminal and using `cd client npm start`.
 
 5. **Access Lumin**: Open your browser and navigate to `http://localhost:3000` to explore Lumin's features.
 
