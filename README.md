@@ -1,6 +1,9 @@
 # Lumin
 
 ![/assets/logo.jpg](https://github.com/tib-source/Lumin-AI/blob/master/assets/logo.jpg)
+<p align="center">
+  <img width="460" height="300" src="https://github.com/tib-source/Lumin-AI/blob/master/assets/logo.jpg">
+</p>
 
 **Welcome to Lumin,** a student project aimed at delving into the world of web technologies while focusing on learning and innovation. In this project, I am leveraging OpenAI's API to create interactive tools and games that enhance the learning experience. Let's take a closer look:
 
@@ -8,8 +11,9 @@
 
 Lumin serves as an experimental platform where I am actively engaging with web development and OpenAI's capabilities to foster an environment of continuous learning and growth. Below are some highlights of what Lumin offers:
 
-[Personalized Quiz Screenshot](https://github.com/tib-source/Lumin-AI/blob/master/assets/Landing-page.jpg)"
-
+<p align="center">
+  <img width="460" height="300" src="assets/Landing-Page.jpg">
+</p>
 
 ## Notable Features
 
