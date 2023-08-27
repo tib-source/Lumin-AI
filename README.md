@@ -1,6 +1,6 @@
 # Lumin
 
-![Lumin Logo]({image: Lumin Logo})
+![Lumin Logo]("./assets/logo.jpg")
 
 **Welcome to Lumin,** a student project aimed at delving into the world of web technologies while focusing on learning and innovation. In this project, I am leveraging OpenAI's API to create interactive tools and games that enhance the learning experience. Let's take a closer look:
 
@@ -57,7 +57,5 @@ Collaboration is welcomed! If you'd like to contribute to Lumin's development, p
 Lumin is released under the [MIT License](LICENSE) to promote sharing and learning.
 
 ---
-
-Are you ready to embark on an educational adventure with Lumin? Explore the platform at [https://www.luminlearning.com](https://www.luminlearning.com). For any inquiries, please contact support@luminlearning.com.
 
 *Note: Lumin is a personal student project and is not officially affiliated with OpenAI.*
