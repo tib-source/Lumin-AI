@@ -52,10 +52,6 @@ Lumin's potential goes beyond its current state. Future enhancements are planned
 
 ![Future Enhancements Concept]({image: Future Enhancements Concept})
 
-## Contributing
-
-Collaboration is welcomed! If you'd like to contribute to Lumin's development, please review our [contribution guidelines](CONTRIBUTING.md).
-
 ## License
 
 Lumin is released under the [MIT License](LICENSE) to promote sharing and learning.
