@@ -1,4 +1,3 @@
-# Lumin
 
 <p align="center">
   <img src="assets/logo.jpg">
