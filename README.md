@@ -1,6 +1,6 @@
 # Lumin
 
-![Lumin Logo]("./assets/logo.jpg")
+![Lumin Logo]("/assets/logo.jpg")
 
 **Welcome to Lumin,** a student project aimed at delving into the world of web technologies while focusing on learning and innovation. In this project, I am leveraging OpenAI's API to create interactive tools and games that enhance the learning experience. Let's take a closer look:
 
