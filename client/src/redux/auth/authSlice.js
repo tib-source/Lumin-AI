@@ -3,7 +3,15 @@ import { login, register } from "./authActions";
 
 // try and get the token from local storage or set to null if unavailable
 const token = null || localStorage.getItem("auth")
-let user = null || JSON.parse(atob(token.split(".")[1]))
+
+let user;
+
+try {
+    user = JSON.parse(atob(token.split(".")[1]))
+} catch (e) {
+    console.log(e)
+    user = null
+}
 if (typeof user == "string") {
     //Over Stringified string requires multiple JSON parse to be converted to json
     // refer to : https://stackoverflow.com/questions/42494823/json-parse-returns-string-instead-of-object
