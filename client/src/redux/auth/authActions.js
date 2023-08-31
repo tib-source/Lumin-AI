@@ -1,8 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
-
-const backendURL = 'http://127.0.0.1:5000'
-
+let backendURL;
+if (import.meta.env.MODE === "production") {
+    backendURL = 'https://lumin-backend.vercel.app/'
+} else {
+    backendURL = 'localhost:5000'
+}
+console.log(import.meta.env)
 export const login = createAsyncThunk(
     "auth/login",
     async (userData, thunkAPI) => {
