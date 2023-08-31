@@ -24,14 +24,16 @@
 
 /* variables */
 :root {
-  --primary: #ffe5a6;
-  --bg: #131313;
-  --secondary:  #202329;
-  --teritary: #6b8afd;
-  --teritary_second: #6bc5fd98;
-  --white: #ffffff;
-  --error: #FF9494;
-  --success: #90EE90;
+  --primary: rgb(255, 229, 166);
+  --bg: rgb(19, 19, 19);
+  --secondary:  rgb(32, 35, 41);
+  /* --bg: #202329;
+  --secondary:  #131313; */
+  --teritary: rgb(107, 138, 253);
+  --teritary_second: rgba(107, 197, 253, 0.60);
+  --white: rgb(255, 255, 255);
+  --error: rgb(255, 148, 148);
+  --success: rgb(144, 238, 144);
   --sidebarWidth: 35vw;
   --main-font: 'Montserrat', sans-serif;
   --navbar-height: 12.5vh;
@@ -185,7 +187,7 @@ a:hover {
 
 }
 
-.home__main__middle{ 
+/* .home__main__middle{ 
   width: 100%;
   height: calc( 100svh - (var(--navbar-height)*2));
   color: var(
@@ -253,7 +255,7 @@ a:hover {
   padding: 0.5rem;
   margin-left: 1rem;
 
-}
+} */
 
 .quiz{
   text-align: center;

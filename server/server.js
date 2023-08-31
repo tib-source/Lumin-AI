@@ -5,6 +5,14 @@ const { Configuration, OpenAIApi } = require("openai");
 const fs = require("fs");
 require("dotenv").config();
 const app = express();
+
+if (process.env.NODE_ENV !== "production") {
+	require("dotenv").config({
+		path: __dirname + '/.env'
+	})
+}
+
+
 // connecting to the mongodb database using mongoose
 mongoose
 	.connect(process.env.MONGO_URI, {})

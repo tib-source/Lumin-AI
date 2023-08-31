@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-export default function ContentMain() {
+import "./index.css";
+export default function Explore() {
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
-  console.log(typeof user);
   function handleSubmit(e) {
     e.preventDefault();
     const topic = e.target[0].value;
@@ -20,13 +18,10 @@ export default function ContentMain() {
   }
   return (
     <div className="home__main__middle flex">
-      <h1>Welcome {user?.username || "User"}</h1>
+      <h1>Luminator</h1>
       <form className="home__main__form" onSubmit={handleSubmit}>
-        <label htmlFor="topic">
-          <span>Topic to Explore:</span>
-          <input id="topic" name="topic" type="text" required />
-        </label>
-        <label htmlFor="qtype">
+        <input className="topic" name="topic" type="text" required />
+        {/* <label htmlFor="qtype">
           <span>Type of Question:</span>
           <select name="qtype" id="qtype">
             <option value={"trueFalse"}>True or False</option>
@@ -48,7 +43,7 @@ export default function ContentMain() {
             <option value={"Postgraduate"}>Postgraduate</option>
             <option value={"PHD"}>PHD</option>
           </select>
-        </label>
+        </label> */}
 
         <button type="submit">Generate</button>
       </form>

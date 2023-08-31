@@ -14,6 +14,7 @@ import Quiz from "../components/Quiz/Quiz";
 import ForumPage from "../pages/Forum/ForumPage";
 import Games from "../components/Games/Games";
 import FlashBang from "../components/Games/FlashBang/FlashBang";
+import Explore from "../pages/Explore/Explore";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,9 @@ let router = createBrowserRouter(
         <Route path="register" element={<Register />} />
       </Route>
       <Route element={<HomeLayout />}>
+        <Route path="/explore">
+          <Route index element={<Explore />} />
+        </Route>
         <Route path="/learn">
           <Route index element={<HomePage />} />
         </Route>
@@ -45,7 +49,7 @@ let router = createBrowserRouter(
   )
 );
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider basename="/" router={router} />;
 }
 
 export default App;

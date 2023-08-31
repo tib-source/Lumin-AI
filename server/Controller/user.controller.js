@@ -25,12 +25,12 @@ module.exports = class UserController {
 		try {
 			const user = await UserServices.getUserData(username)
 			if (!user) {
-				return null
+				return error
 			}
 			return user
 		} catch (error) {
-			console.log(error)
-			return null
+
+			return error
 		}
 	}
 	static async login(req, res) {
@@ -40,10 +40,20 @@ module.exports = class UserController {
 			const user = await UserServices.getUserData(username)
 			const userData = {
 				username: user.username,
+				email: user.email,
+				picture: user.profile.image,
+				expPoints: user.profile.expPoints,
 				id: user._id
 			}
 
 			user.comparePassword(password, function (error, isMatch) {
+				if (error) {
+					res.status(403).json({
+						error: error.message,
+						error_code: error.type,
+						access: "denied"
+					})
+				}
 				if (isMatch) {
 					const token = generateToken(JSON.stringify(userData))
 					return res.status(200).json({
@@ -51,17 +61,20 @@ module.exports = class UserController {
 						user: userData,
 						token
 					})
+				} else {
+					return res.status(403).json({
+						error: "Invalid Password",
+						access: "denied"
+					})
+
 				}
-				return res.status(403).json({
-					error,
-					access: "denied"
-				})
 
 			})
 
 
-		} catch (error) {
-			console.log(error)
+		} catch (e) {
+			console.error(`${e.name}: ${e.message}`);
+			res.status(400).json(e)
 		}
 	}
 
@@ -82,11 +95,7 @@ module.exports = class UserController {
 				})
 			}
 		} catch (error) {
-			console.log(JSON.stringify(error));
-			console.log("");
-			console.log("meow\n");
-			console.log("");
-			console.log(error)
+			res.status(400).json(error)
 		}
 	}
 };
