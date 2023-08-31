@@ -7,7 +7,6 @@ import {
 import RootLayout from "../layout/rootLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
-import Landing from "../pages/landing";
 import HomeLayout from "../layout/HomeLayout";
 import HomePage from "../pages/HomePage";
 import Quiz from "../components/Quiz/Quiz";
@@ -15,6 +14,7 @@ import ForumPage from "../pages/Forum/ForumPage";
 import Games from "../components/Games/Games";
 import FlashBang from "../components/Games/FlashBang/FlashBang";
 import Explore from "../pages/Explore/Explore";
+import Landing from "../pages/Landing";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
