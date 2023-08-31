@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 
 let backendURL;
 if (import.meta.env.MODE === "production") {
-    backendURL = 'https://lumin-backend.onrender.com/'
+    backendURL = 'https://lumin-backend.onrender.com'
 } else {
     backendURL = 'localhost:5000'
 }
