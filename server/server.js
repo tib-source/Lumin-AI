@@ -20,7 +20,12 @@ mongoose
 	.catch((err) => console.log(`Error in DB connection ${err}`));
 
 // response body parser
-app.use(cors());
+
+let corsOptions = {
+	origin: "*",
+	optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // app.use(express.urlencoded({ limit: true }));
