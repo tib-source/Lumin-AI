@@ -24,6 +24,7 @@ mongoose
 let corsOptions = {
 	origin: "*",
 	optionsSuccessStatus: 200,
+	credentials: true,
 	allowedHeaders: ['Content-Type', 'Authorization']
 }
 app.use(cors(corsOptions));
