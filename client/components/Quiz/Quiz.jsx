@@ -2,71 +2,61 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Question from "./Question";
+import { useDispatch, useSelector } from "react-redux";
+import { getQuiz } from "../../src/redux/general/generalActions";
 
 export default function Quiz() {
-	let { state } = useLocation();
-	const [correctAns, setCorrectAns] = useState(0);
-	const [questions, setQuestions] = useState([]);
-	const { topic, difficulty, qtype } = state;
-	const questionTypes = {
-		trueFalse: "True or False",
-		multipleChoice: "Multiple Choice",
-		fillBlank: "Fill the Blank",
-	};
+  const dispatch = useDispatch();
+  const { type, topic, level, loading } = useSelector((state) => state.general);
+  const [correctAns, setCorrectAns] = useState(0);
+  const [questions, setQuestions] = useState([]);
+  const questionTypes = {
+    trueFalse: "True or False",
+    multipleChoice: "Multiple Choice",
+    fillBlank: "Fill the Blank",
+  };
 
-	const raw = JSON.stringify({
-		ammount: "10",
-		topic,
-		level: difficulty,
-	});
+  console.log("hello");
+  useEffect(() => {
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    dispatch(getQuiz()).then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setQuestions(data.payload.result.questions);
+      }
+    });
+  }, [dispatch]);
 
-	useEffect(() => {
-		let myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
-
-		var requestOptions = {
-			method: "POST",
-			headers: myHeaders,
-			body: raw,
-			redirect: "follow",
-		};
-		fetch(`http://localhost:5000/api/questions/${qtype}`, requestOptions)
-			.then((response) => response.json())
-			.then((result) => {
-				console.log(result);
-				return setQuestions(result.questions);
-			})
-			.catch((error) => console.log("error", error));
-	}, [state, qtype, raw]);
-
-	const handleCorrectAns = () => {
-		setCorrectAns(correctAns + 1);
-	};
-	return (
-		<div className="quiz">
-			<div className="quiz__header">
-				<h1>{questionTypes[qtype]}</h1>
-				<h3>{correctAns} / 10</h3>
-				<p>Topic: {topic}</p>
-				<p>Level: {difficulty || "undefined"}</p>
-			</div>
-			{!questions ? (
-				<div className="loading">Loading</div>
-			) : (
-				questions.map(({ question, answer, choices }, index) => {
-					return (
-						<Question
-							key={index}
-							question={question}
-							answer={answer}
-							choices={choices || "undefined"}
-							type={qtype}
-							index={index + 1}
-							handleCorrect={handleCorrectAns}
-						/>
-					);
-				})
-			)}
-		</div>
-	);
+  const handleCorrectAns = () => {
+    setCorrectAns(correctAns + 1);
+  };
+  return (
+    <div className="quiz">
+      <div className="quiz__header">
+        <h1>{questionTypes[type]}</h1>
+        <h3>{correctAns} / 10</h3>
+        <p>Topic: {topic}</p>
+        <p>Level: {level || "undefined"}</p>
+      </div>
+      {loading ? (
+        <div className="loading">Loading</div>
+      ) : (
+        questions.map(({ question, answer, choices }, index) => {
+          return (
+            <Question
+              key={index}
+              question={question}
+              answer={answer}
+              choices={choices || "undefined"}
+              type={type}
+              index={index + 1}
+              handleCorrect={handleCorrectAns}
+            />
+          );
+        })
+      )}
+    </div>
+  );
 }

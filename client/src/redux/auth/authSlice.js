@@ -20,6 +20,7 @@ if (typeof user == "string") {
 const initialState = {
     loading: false,
     user,
+    profile: null,
     token,
     error: null,
     success: false,
@@ -50,11 +51,10 @@ export const authSlice = createSlice({
             })
             // actions for registration 
             .addCase(register.pending, setLoading)
-            .addCase(register.fulfilled, (state, action) => {
+            .addCase(register.fulfilled, (state) => {
                 state.success = true
             }).addCase(register.rejected, setError)
     }
 })
 
-export const { setToken, setUser, unsetUser } = authSlice.actions
 export default authSlice.reducer

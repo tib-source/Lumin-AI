@@ -1,22 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch } from "react-redux";
+import { setQuizConfig } from "../../src/redux/general/generalSlice";
 export default function ContentMain() {
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   console.log(typeof user);
   function handleSubmit(e) {
     e.preventDefault();
     const topic = e.target[0].value;
-    const qtype = e.target[1].value;
+    const type = e.target[1].value;
     const difficulty = e.target[2].value;
-    console.log("meow");
-    navigate(`/quiz`, {
-      state: {
+    dispatch(
+      setQuizConfig({
         topic,
-        qtype,
+        type,
         difficulty,
-      },
-    });
+      })
+    );
+    navigate(`/quiz`);
   }
   return (
     <div className="home__main__middle flex">
