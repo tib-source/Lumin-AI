@@ -43,6 +43,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/trueFalse", (req, res) => {
+	console.log(`DATA LOADED FOR REQUEST: ${JSON.stringify(trueOrFalse)}`)
 	const prompt = "meow";
 	if (prompt) {
 		// temporarily send hardcoded data untill i get the open ai api
