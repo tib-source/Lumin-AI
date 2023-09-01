@@ -26,11 +26,18 @@ export default function FlashBang() {
     active,
     error
   ) {
+    // get element from reference object
     const element = elementRef.current;
+
+    // if there is nothing currently selected by the user
     if (!currentRef.current) {
+      // add active class to element
       element.classList.toggle(active);
+      // add element to activated List
       setElementList([...elementList, element]);
+      // set element as currently selected
       currentRef.current = element;
+      // check if there has been a match
       checkMatch();
     } else {
       //error animation on multiple flip attempt
@@ -82,12 +89,24 @@ export default function FlashBang() {
   }
 
   function reset() {
+    // go through elements and remove all active && success message
+    // make all elements clickable
     for (let element of flippedCards) {
+      element.classList.remove("flash-card-success");
+      element.children[1].classList.remove("flash-card-success");
       element.classList.remove("flash-card-active");
+      // make element clickable
+      clickable(element);
     }
     for (let element of cluesActive) {
+      // remove success if it exists
+      element.classList.remove("clue-success");
       element.classList.remove("clue-active");
+      // make clickable
+      clickable(element);
     }
+
+    // reset state
     currentClue.current = null;
     currentClue.flash = null;
     setFlippedCards([]);
@@ -98,28 +117,46 @@ export default function FlashBang() {
   function unclickable(element) {
     element.style.pointerEvents = "none";
   }
+
+  function clickable(element) {
+    element.style.pointerEvents = "auto";
+  }
   function checkMatch() {
+    // get currently selected flash card
     const flash = currentFlash.current;
+    // get curreltly selected clue
     const clue = currentClue.current;
+
     if (flash && clue) {
+      // check if flash and clue match by creating an object with both
+      // and seeing if that exists in the FlashBang data set
       const result = flashBang.some((item) => {
         return (
           item.flashText === flash.dataset.flash &&
           item.flashClue === clue.dataset.clue
         );
       });
-
+      // if Flash and Clue match
       if (result) {
+        // reset the currently selected flash and clue
+        // allows user to make another selection
         resetCurrent(false);
+        // add the success classlist to flash - makes the flash card green
         flash.children[1].classList.add("flash-card-success");
         flash.classList.add("flash-card-success");
+        // add success classList to clue
         clue.classList.add("clue-success");
+
+        // make the successfull flash and clue unclickable
         unclickable(flash);
         unclickable(clue);
       } else {
+        // reset currently selected if there was no match
+        // argument - True : decreases one lifeline and shows error
         resetCurrent(true);
       }
     } else {
+      //do nothing if both flash and clue hasnt been selected yet
       return null;
     }
   }
