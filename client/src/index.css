@@ -277,7 +277,8 @@ a:hover {
 }
 
 .questionCard button{ 
-  background-color: var(--secondary);
+  background-color: var(--primary);
+  font-family: var(--main-font);
   border: none;
   padding: 1em 3rem;
   margin-right: 1rem;
@@ -308,4 +309,18 @@ a:hover {
     font-family: var(--main-font);
     padding: 0.5rem;
   
+}
+
+.question .answers button[data-correct="True"]{
+
+  background-color: var(--success);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+
+.question .answers button[data-correct="False"]{
+
+  background-color: var(--error);
+
 }
