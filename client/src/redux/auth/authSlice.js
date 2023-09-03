@@ -20,6 +20,7 @@ if (typeof user == "string") {
 const initialState = {
     loading: false,
     user,
+    isAuthenticated: false,
     profile: null,
     token,
     error: null,
@@ -45,6 +46,7 @@ export const authSlice = createSlice({
             .addCase(login.fulfilled, (state, action) => {
                 state.token = action.payload.token
                 state.user = action.payload.user
+                state.isAuthenticated = true
             }).addCase(login.rejected, (state, { payload }) => {
                 state.loading = false
                 state.error = payload

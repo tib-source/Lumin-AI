@@ -4,7 +4,7 @@ let backendURL;
 if (import.meta.env.PROD) {
     backendURL = 'https://lumin-backend.onrender.com'
 } else {
-    backendURL = 'localhost:5000'
+    backendURL = 'http://localhost:5000'
 }
 console.log(import.meta.env)
 export const login = createAsyncThunk(
